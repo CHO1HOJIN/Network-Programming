@@ -1,0 +1,16 @@
+rm datastream0.rx
+rm datastream1.rx
+rm datastream2.rx
+rm datastream3.rx
+rm datastream4.rx
+rm datastream5.rx
+rm datastream6.rx
+rm result0.txt
+rm result1.txt
+rm result2.txt
+rm result3.txt
+rm result4.txt
+rm result5.txt
+rm result6.txt
+rm codedstream.rx
+rm codedstream.tx

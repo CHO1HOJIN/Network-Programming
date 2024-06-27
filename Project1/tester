@@ -1,0 +1,42 @@
+./crc_encoder beggin.tx codedstream.tx 11011001 4
+./linksim codedstream.tx codedstream.rx 0.00 1111
+./crc_decoder codedstream.rx datastream0.rx result0.txt 11011001 4
+
+./crc_encoder beggin.tx codedstream.tx 110111 4
+./linksim codedstream.tx codedstream.rx 0.03 1111
+./crc_decoder codedstream.rx datastream1.rx result1.txt 110111 4
+
+./crc_encoder beggin.tx codedstream.tx 110111 8
+./linksim codedstream.tx codedstream.rx 0.04 1011
+./crc_decoder codedstream.rx datastream2.rx result2.txt 110111 8
+
+./crc_encoder beggin.tx codedstream.tx 11010001010000010001011 4
+./linksim codedstream.tx codedstream.rx 0.05 1100
+./crc_decoder codedstream.rx datastream3.rx result3.txt 11010001010000010001011 4
+
+./crc_encoder beggin.tx codedstream.tx 1101000101000001000101100110011001010100110101111100001011 8
+./linksim codedstream.tx codedstream.rx 0.06 1001
+./crc_decoder codedstream.rx datastream4.rx result4.txt 1101000101000001000101100110011001010100110101111100001011 8
+
+./crc_encoder beggin.tx codedstream.tx 10 4
+./linksim codedstream.tx codedstream.rx 0.01 1101
+./crc_decoder codedstream.rx datastream5.rx result5.txt 10 4
+
+./crc_encoder beggin.tx codedstream.tx 10 8
+./linksim codedstream.tx codedstream.rx 0.07 1101
+./crc_decoder codedstream.rx datastream6.rx result6.txt 10 8
+
+echo -n "[ result 0 ] : "
+cat result0.txt
+echo -n "[ result 1 ] : "
+cat result1.txt
+echo -n "[ result 2 ] : "
+cat result2.txt
+echo -n "[ result 3 ] : "
+cat result3.txt
+echo -n "[ result 4 ] : "
+cat result4.txt
+echo -n "[ result 5 ] : "
+cat result5.txt
+echo -n "[ result 6 ] : "
+cat result6.txt
