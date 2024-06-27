@@ -1,0 +1,26 @@
+CC = g++
+CFLAGS = -Wall -g
+SRCS_DISTVEC = distvec_20201654.cc
+SRCS_LINKSTATE = linkstate_20201654.cc
+
+OBJS_DISTVEC = $(SRCS_DISTVEC:.cc=.o)
+OBJS_LINKSTATE = $(SRCS_LINKSTATE:.cc=.o)
+
+TARGET_DISTVEC = distvec
+TARGET_LINKSTATE = linkstate
+
+.PHONY: all clean
+
+all: $(TARGET_DISTVEC) $(TARGET_LINKSTATE)
+
+$(TARGET_DISTVEC): $(OBJS_DISTVEC)
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(TARGET_LINKSTATE): $(OBJS_LINKSTATE)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.cc
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS_DISTVEC) $(OBJS_LINKSTATE) $(TARGET_DISTVEC) $(TARGET_LINKSTATE)
